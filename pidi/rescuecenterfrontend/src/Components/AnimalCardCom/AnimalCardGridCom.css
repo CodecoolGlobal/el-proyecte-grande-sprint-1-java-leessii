@@ -1,0 +1,5 @@
+.custom-card-row .col-lg-4 {
+    flex: 0 0 calc(33.33% - 35px); /* Adjust the margin */
+    max-width: calc(33.33% - 70px); /* Adjust the margin */
+    margin: 5px; /* Add a small margin */
+}

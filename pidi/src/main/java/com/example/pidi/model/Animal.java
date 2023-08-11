@@ -22,12 +22,8 @@ public class Animal {
     @Column (name = "age")
     private int age;
 
-    public Animal(String name, String species, double weight, int age) {
-        this.name = name;
-        this.species = species;
-        this.weight = weight;
-        this.age = age;
-    }
+    @Column (name = "img")
+    private String img;
 
     public Animal() {
 
@@ -71,5 +67,13 @@ public class Animal {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }
