@@ -16,12 +16,12 @@ public class Animal {
     private int age;
     private  String species;
     private boolean openForAdoption;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "adoption_status_id")
     private AdoptionStatus adoptionStatus;
     private Date admissonDate;
     private String img;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "medical_history_id")
     private MedicalHistory medicalHistory;
 
