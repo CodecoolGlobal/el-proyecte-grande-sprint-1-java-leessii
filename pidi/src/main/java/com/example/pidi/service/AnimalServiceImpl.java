@@ -11,12 +11,11 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class RescueCenterServiceImpl implements RescueCenterService {
+public class AnimalServiceImpl implements AnimalService {
 
     private final AnimalRepository animalRepository;
 
-
-    public RescueCenterServiceImpl(AnimalRepository animalRepository) {
+    public AnimalServiceImpl(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
     }
 
@@ -46,8 +45,7 @@ public class RescueCenterServiceImpl implements RescueCenterService {
 
         animal.setName(animalDetails.getName());
         animal.setAge(animalDetails.getAge());
-        animal.setWeight(animalDetails.getWeight());
-
+        animal.setSpecies(animalDetails.getSpecies());
 
         Animal updatedAnimal = animalRepository.save(animal);
         return ResponseEntity.ok(updatedAnimal);
@@ -65,7 +63,7 @@ public class RescueCenterServiceImpl implements RescueCenterService {
     }
 
     @Override
-    public ResponseEntity<Map<String, Boolean>> clearDataBase() {
+    public ResponseEntity<Map<String, Boolean>> clearTableAnimals() {
         animalRepository.deleteAll();
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);

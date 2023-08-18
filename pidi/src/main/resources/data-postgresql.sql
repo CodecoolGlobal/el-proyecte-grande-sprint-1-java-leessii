@@ -1,0 +1,1 @@
+INSERT INTO adoption_status (status) VALUES ('Available');
