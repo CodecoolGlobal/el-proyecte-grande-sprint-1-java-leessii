@@ -1,5 +1,4 @@
 import React from 'react'
-import AnimalTableCom from '../Components/AnimalTableCom/AnimalTableCom'
 import AnimalsApi from '../Api/AnimalsApi'
 import {useMutation, useQuery} from '@tanstack/react-query'
 import {CircularProgress, Box} from '@mui/material'
@@ -11,11 +10,11 @@ const AnimalAdministration = () => {
 
   const getAnimalsQuery = useQuery({
     queryKey: ['animals'],
-    queryFn: () => AnimalsApi.get(),
+    queryFn: () => AnimalsApi.getAllAnimals(),
   })
 
   const getAdoptionStatusQuery = useQuery({
-    queryKey: ['adoptionstatus'],
+    queryKey: ['adoptionStatus'],
     queryFn: () => AdoptionStatusApi.get(),
   })
 

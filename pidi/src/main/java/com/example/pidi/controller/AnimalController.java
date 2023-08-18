@@ -24,6 +24,11 @@ public class AnimalController {
         return animalService.getAllAnimals();
     }
 
+    @GetMapping("/adoption")
+    public List<Animal> getAnimalsForAdoption() {
+        return animalService.getAnimalsForAdoption();
+    }
+
     @PostMapping
     public Animal createAnimal(@RequestBody Animal animal) {
         return animalService.createAnimal(animal);

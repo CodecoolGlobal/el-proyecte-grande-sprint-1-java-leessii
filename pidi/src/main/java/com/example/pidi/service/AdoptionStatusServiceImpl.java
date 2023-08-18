@@ -1,7 +1,6 @@
 package com.example.pidi.service;
 
 import com.example.pidi.model.AdoptionStatus;
-import com.example.pidi.model.Animal;
 import com.example.pidi.repository.AdoptionStatusRepository;
 import org.springframework.stereotype.Service;
 

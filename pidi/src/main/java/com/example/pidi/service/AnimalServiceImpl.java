@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class AnimalServiceImpl implements AnimalService {
@@ -22,6 +23,16 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public List<Animal> getAllAnimals() {
         return animalRepository.findAll();
+    }
+
+    @Override
+    public List<Animal> getAnimalsForAdoption() {
+        List<Animal> animals = animalRepository.findAll();
+        List<Animal> animalsForAdoption = animals.stream()
+                .filter(animal -> animal.isOpenForAdoption())
+                .collect(Collectors.toList());
+
+        return animalsForAdoption;
     }
 
     @Override

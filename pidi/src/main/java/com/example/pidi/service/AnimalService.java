@@ -9,6 +9,7 @@ import java.util.Map;
 
 public interface AnimalService {
     List<Animal> getAllAnimals();
+    List<Animal> getAnimalsForAdoption();
     Animal createAnimal(Animal animal);
     ResponseEntity<Animal> getAnimalById(Long id) throws ResourceNotFoundException;
     ResponseEntity<Animal> updateAnimal(Long id, Animal animalDetails) throws ResourceNotFoundException;
