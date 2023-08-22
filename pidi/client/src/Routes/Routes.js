@@ -7,7 +7,8 @@ import ErrorPage from '../Pages/ErrorPage'
 import '../index.css'
 import AboutUsRoute from './AboutUsRoutes'
 import AnimalAdminRoute from './AnimalAdministrationRoutes'
-import AnimalAdoption from './AnimalAdoption'
+import AnimalAdoption from './AnimalAdoptionRoutes'
+import AddAnimalRoute from './AddAnimalRoutes'
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,8 @@ const router = createBrowserRouter([
     children: [
       AboutUsRoute,
       AnimalAdminRoute,
-      AnimalAdoption
+      AnimalAdoption,
+      AddAnimalRoute
     ],
   },
 ])

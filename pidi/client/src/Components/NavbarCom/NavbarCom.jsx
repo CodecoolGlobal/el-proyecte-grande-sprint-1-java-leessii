@@ -2,7 +2,7 @@ import React from 'react'
 import {AppBar, Toolbar, IconButton, Typography, Stack, Button} from '@mui/material'
 import PetsIcon from '@mui/icons-material/Pets'
 
-function NavbarCom() {
+function NavbarCom({customButtons}) {
   return (
     <AppBar position={'static'} elevation={3}>
       <Toolbar>
@@ -13,8 +13,9 @@ function NavbarCom() {
           PIĐI
         </Typography>
         <Stack direction={'row'} spacing={2}>
-          <Button color={'inherit'}>ABOUT</Button>
-          <Button color={'inherit'}>LOGIN</Button>
+          {customButtons.map((button) => (
+              button
+          ))}
         </Stack>
       </Toolbar>
     </AppBar>

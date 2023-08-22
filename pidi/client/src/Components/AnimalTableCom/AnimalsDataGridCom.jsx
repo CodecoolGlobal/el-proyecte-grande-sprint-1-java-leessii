@@ -6,8 +6,6 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
 export default function AnimalsDataGridCom({animals, adoptionStatus, onDelete}) {
-  console.log(adoptionStatus)
-
   const columns = [
     {
       field: 'id',
