@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table
 @Data
 public class Animal {
     @Id
@@ -21,6 +20,6 @@ public class Animal {
     private AdoptionStatus adoptionStatus;
     private LocalDateTime admissionDate;
     private String img;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<MedicalDiagnose> medicalDiagnose;
 }
