@@ -7,6 +7,7 @@ import ErrorPage from '../Pages/ErrorPage'
 import '../index.css'
 import AboutUsRoute from './AboutUsRoutes'
 import AnimalAdminRoute from './AnimalAdministrationRoutes'
+import LoginRoute from "./SignInRoutes";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       AboutUsRoute,
       AnimalAdminRoute,
+      LoginRoute,
     ],
   },
 ])
