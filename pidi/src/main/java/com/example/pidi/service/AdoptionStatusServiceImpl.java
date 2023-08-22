@@ -16,13 +16,12 @@ public class AdoptionStatusServiceImpl implements AdoptionStatusService {
     }
 
     @Override
-    public List<AdoptionStatus> getAllAdoptionStatus() {
+    public List<AdoptionStatus> findAll() {
         return adoptionStatusRepository.findAll();
     }
 
-    //TODO: initialize on running
     @Override
-    public AdoptionStatus createAdoptionStatus(AdoptionStatus adoptionStatus) {
+    public AdoptionStatus save(AdoptionStatus adoptionStatus) {
         return adoptionStatusRepository.save(adoptionStatus);
     }
 }

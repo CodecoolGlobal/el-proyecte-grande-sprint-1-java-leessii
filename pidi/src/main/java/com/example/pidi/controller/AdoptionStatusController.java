@@ -1,7 +1,6 @@
 package com.example.pidi.controller;
 
 import com.example.pidi.model.AdoptionStatus;
-import com.example.pidi.model.Animal;
 import com.example.pidi.service.AdoptionStatusService;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,11 +19,10 @@ public class AdoptionStatusController {
 
     @GetMapping
     public List<AdoptionStatus> getAllAdoptionStatus() {
-        return adoptionStatusService.getAllAdoptionStatus();
+        return adoptionStatusService.findAll();
     }
-
     @PostMapping
     public AdoptionStatus createAdoptionStatus(@RequestBody AdoptionStatus adoptionStatus) {
-        return adoptionStatusService.createAdoptionStatus(adoptionStatus);
+        return adoptionStatusService.save(adoptionStatus);
     }
 }

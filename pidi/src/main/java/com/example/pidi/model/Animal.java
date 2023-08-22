@@ -1,97 +1,26 @@
 package com.example.pidi.model;
 
-
 import jakarta.persistence.*;
+import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Table (name = "animals")
+@Table
+@Data
 public class Animal {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "animal_id")
+    @GeneratedValue (strategy = GenerationType.SEQUENCE)
     private long id;
     private String name;
     private int age;
     private  String species;
     private boolean openForAdoption;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "adoption_status_id")
+    @ManyToOne
     private AdoptionStatus adoptionStatus;
-    private Date admissonDate;
+    private LocalDateTime admissionDate;
     private String img;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "medical_history_id")
-    private MedicalHistory medicalHistory;
-
-    /*
-    public Animal() {
-        adoptionStatus.getStatus().equals("Active") ? this.openForAdoption = true : this.openForAdoption = false;
-    }
-     */
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
-    }
-
-    public boolean isOpenForAdoption() {
-        return openForAdoption;
-    }
-
-    public void setOpenForAdoption(boolean openForAdoption) {
-        this.openForAdoption = openForAdoption;
-    }
-
-    public AdoptionStatus getAdoptionStatus() {
-        return adoptionStatus;
-    }
-
-    public void setAdoptionStatus(AdoptionStatus adoptionStatus) {
-        this.adoptionStatus = adoptionStatus;
-    }
-
-    public Date getAdmissonDate() {
-        return admissonDate;
-    }
-
-    public void setAdmissonDate(Date admissonDate) {
-        this.admissonDate = admissonDate;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<MedicalDiagnose> medicalDiagnose;
 }

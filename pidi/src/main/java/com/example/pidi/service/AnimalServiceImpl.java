@@ -1,15 +1,11 @@
 package com.example.pidi.service;
 
-import com.example.pidi.controller.exeption.ResourceNotFoundException;
 import com.example.pidi.model.Animal;
 import com.example.pidi.repository.AnimalRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Service
 public class AnimalServiceImpl implements AnimalService {
@@ -21,63 +17,49 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public List<Animal> getAllAnimals() {
+    public List<Animal> findAll() {
         return animalRepository.findAll();
     }
 
     @Override
     public List<Animal> getAnimalsForAdoption() {
-        List<Animal> animals = animalRepository.findAll();
-        List<Animal> animalsForAdoption = animals.stream()
-                .filter(animal -> animal.isOpenForAdoption())
-                .collect(Collectors.toList());
-
-        return animalsForAdoption;
+        return animalRepository.findByOpenForAdoptionIsTrue();
     }
 
     @Override
-    public Animal createAnimal(Animal animal) {
+    public Animal save(Animal animal) {
         return animalRepository.save(animal);
     }
 
     @Override
-    public ResponseEntity<Animal> getAnimalById(Long id) throws ResourceNotFoundException {
-        Animal animal = animalRepository.findById(id)
-                .orElseThrow(ResourceNotFoundException::new);
-
-        return ResponseEntity.ok(animal);
+    public Optional<Animal> findById(long id) {
+        return animalRepository.findById(id);
     }
 
     @Override
-    public ResponseEntity<Animal> updateAnimal(Long id, Animal animalDetails) throws ResourceNotFoundException {
-        Animal animal;
-        animal = animalRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException());
+    public Optional<Animal> update(long id, Animal animalDetails) {
+        /*
+        Optional<Animal> animal;
+        animal = animalRepository.findById(id);
 
-        animal.setName(animalDetails.getName());
-        animal.setAge(animalDetails.getAge());
-        animal.setSpecies(animalDetails.getSpecies());
+        if(animal.isPresent()) {
+            animal.setName(animalDetails.getName());
+            animal.setAge(animalDetails.getAge());
+            animal.setSpecies(animalDetails.getSpecies());
 
-        Animal updatedAnimal = animalRepository.save(animal);
-        return ResponseEntity.ok(updatedAnimal);
+            return animalRepository.save(animal);
+        }
+         */
+        return null;
     }
 
     @Override
-    public ResponseEntity<Map<String, Boolean>> deleteAnimal(Long id) throws ResourceNotFoundException {
-        Animal animal = animalRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException());
-
-        animalRepository.delete(animal);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return ResponseEntity.ok(response);
+    public void delete(long id) {
+        animalRepository.deleteById(id);
     }
 
     @Override
-    public ResponseEntity<Map<String, Boolean>> clearTableAnimals() {
+    public void clearTable() {
         animalRepository.deleteAll();
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return ResponseEntity.ok(response);
     }
 }

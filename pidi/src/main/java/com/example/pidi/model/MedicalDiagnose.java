@@ -1,60 +1,19 @@
 package com.example.pidi.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 @Entity
-@Table(name = "medical_diagnoses")
+@Table
+@Data
 public class MedicalDiagnose {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "medical_diagnoses_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
-    private Date dateOfTreatment;
+    private LocalDateTime dateOfTreatment;
     private double weight;
     private double height;
     private String treatment;
-    @ManyToOne
-    @JoinColumn(name="medicalHistory_id")
-    private MedicalHistory medicalHistory;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Date getDateOfTreatment() {
-        return dateOfTreatment;
-    }
-
-    public void setDateOfTreatment(Date dateOfTreatment) {
-        this.dateOfTreatment = dateOfTreatment;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public String getTreatment() {
-        return treatment;
-    }
-
-    public void setTreatment(String treatment) {
-        this.treatment = treatment;
-    }
 }

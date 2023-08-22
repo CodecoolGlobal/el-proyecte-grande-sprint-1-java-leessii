@@ -2,17 +2,22 @@ package com.example.pidi.service;
 
 import com.example.pidi.controller.exeption.ResourceNotFoundException;
 import com.example.pidi.model.Animal;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
 public interface AnimalService {
-    List<Animal> getAllAnimals();
+    List<Animal> findAll();
+
     List<Animal> getAnimalsForAdoption();
-    Animal createAnimal(Animal animal);
-    ResponseEntity<Animal> getAnimalById(Long id) throws ResourceNotFoundException;
-    ResponseEntity<Animal> updateAnimal(Long id, Animal animalDetails) throws ResourceNotFoundException;
-    ResponseEntity<Map<String, Boolean>> deleteAnimal(Long id) throws ResourceNotFoundException;
-    ResponseEntity<Map<String, Boolean>> clearTableAnimals();
+
+    Animal save(Animal animal);
+
+    Optional<Animal> findById(long id) throws ResourceNotFoundException;
+
+    Optional<Animal> update(long id, Animal animalDetails) throws ResourceNotFoundException;
+
+    void delete(long id);
+
+    void clearTable();
 }
