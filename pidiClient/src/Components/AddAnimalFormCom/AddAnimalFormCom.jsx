@@ -1,12 +1,10 @@
 import React from 'react'
 import {
-  Box,
   FormControl,
-  FormHelperText,
   InputAdornment,
   InputLabel,
-  OutlinedInput, Paper, Select,
-  TextField,
+  OutlinedInput,
+  Paper,
 } from '@mui/material'
 
 function AddAnimalFormCom() {
