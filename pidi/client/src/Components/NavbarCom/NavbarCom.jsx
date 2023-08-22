@@ -1,11 +1,13 @@
 import React from 'react'
-import {AppBar, Toolbar, IconButton, Typography, Stack, Button} from '@mui/material'
+import {AppBar, Toolbar, IconButton, Typography, Stack} from '@mui/material'
 import PetsIcon from '@mui/icons-material/Pets'
+
 
 function NavbarCom({customButtons}) {
   return (
     <AppBar position={'static'} elevation={3}>
       <Toolbar>
+
         <IconButton size={'large'} edge={'start'} color={'inherit'} aria-label={'logo'}>
           <PetsIcon/>
         </IconButton>

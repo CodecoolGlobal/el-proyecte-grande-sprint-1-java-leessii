@@ -9,6 +9,7 @@ import AboutUsRoute from './AboutUsRoutes'
 import AnimalAdminRoute from './AnimalAdministrationRoutes'
 import AnimalAdoption from './AnimalAdoptionRoutes'
 import AddAnimalRoute from './AddAnimalRoutes'
+import LoginRoute from "./SignInRoutes"
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
       AboutUsRoute,
       AnimalAdminRoute,
       AnimalAdoption,
-      AddAnimalRoute
+      AddAnimalRoute,
+      LoginRoute,
     ],
   },
 ])
