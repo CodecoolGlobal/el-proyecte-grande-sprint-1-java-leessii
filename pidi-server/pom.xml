@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>pidi</artifactId>
+	<artifactId>pidi-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pidi</name>
 	<description>Animal shelter management App</description>
