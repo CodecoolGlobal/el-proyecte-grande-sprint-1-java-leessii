@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ public class Animal {
     private boolean openForAdoption;
     @ManyToOne
     private AdoptionStatus adoptionStatus;
-    private LocalDateTime admissionDate;
+    private String admissionDate;
     private String img;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<MedicalDiagnose> medicalDiagnose;

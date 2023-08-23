@@ -54,7 +54,6 @@ export default function AnimalsDataGridCom({animals, adoptionStatus, onDelete}) 
       field: 'admissionDate',
       headerName: 'Admission Date',
       width: 150,
-      type: "date",
       editable: true,
     },
     {

@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>pidi-server</artifactId>
+	<artifactId>pidiServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pidi</name>
+	<name>pidiServer</name>
 	<description>Animal shelter management App</description>
 	<properties>
 		<java.version>17</java.version>
