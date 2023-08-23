@@ -71,6 +71,8 @@ function AddAnimalFormCom({adoptionStatus}) {
           <FormControl fullWidth sx={{paddingBottom: 2}}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
+                views={["year", "month", "day"]}
+                format="DD-MM-YYYY"
                 value={data.admissionDate}
                 onChange={(newDate) => updateData({admissionDate: newDate})}
               />
