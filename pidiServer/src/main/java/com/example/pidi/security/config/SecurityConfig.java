@@ -25,7 +25,7 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("") //everything inside here does not neet authentification
+                .requestMatchers("/api/v1/auth/**") //everything inside here does not neet authentification
                 .permitAll()
                 .anyRequest() // any other requests
                 .authenticated()

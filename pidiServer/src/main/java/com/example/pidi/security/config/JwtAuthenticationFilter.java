@@ -21,12 +21,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService; //already exists as interface, we want our own implementation (we want our own bean of the implementation ), created in "Application Config"
+
     @Override
     protected void doFilterInternal(
             @NonNull HttpServletRequest request,
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain
-    )   throws ServletException, IOException {
+    ) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization"); //this header contains the Jwt-token
         final String jwt; //checking the jwt-token
         final String userEmail; //needed later to validate the user with the token
@@ -53,4 +54,5 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
         // no we have to do the binding, so the filters are used, new class in config package (Security Configuration)
     }
+
 }

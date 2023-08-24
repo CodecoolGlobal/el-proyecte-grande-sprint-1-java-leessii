@@ -23,18 +23,35 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "5b1104946a556b756a1d94491d3692eb90fbf0fe7de4205cca6a609cbe79c9e8";
+
+
+    private static final String SECRET_KEY = "22563c544b3c582236736f4148535374426443673133313c3725264737";
+
 
     private Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
+
+ /*
+
+    private Key getSignInKey() {
+        // Generate an ECDSA private key
+        return Keys.keyPairFor(SignatureAlgorithm.ES256).getPrivate();
+    }
+
+  */
+
+
+
+
     public Claims extractAllClaims(String token) {
         return Jwts
                 .parserBuilder()
                 .setSigningKey(getSignInKey())
                 .build()
-                .parseClaimsJwt(token)
+                .parseClaimsJws(token) //Jws not Jwt !!!!!!
                 .getBody();
     }
 
@@ -58,7 +75,7 @@ public class JwtService {
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
-                .signWith(getSignInKey(), SignatureAlgorithm.ES256)
+                .signWith(getSignInKey(), SignatureAlgorithm.HS256) // use HS256 !!!!!!
                 .compact(); // this finally generates the token out of userdetails and extra claims
     }
 
