@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class AdoptionStatus {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
     private String status;
 }
