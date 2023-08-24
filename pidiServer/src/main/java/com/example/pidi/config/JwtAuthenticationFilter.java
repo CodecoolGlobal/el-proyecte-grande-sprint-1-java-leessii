@@ -49,7 +49,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 authToken.setDetails(
                         new WebAuthenticationDetailsSource().buildDetails(request)
                 );
+                SecurityContextHolder.getContext().setAuthentication(authToken);
             }
-        }
+        } // after this filter we need the filterchain to execute the next filter
+        filterChain.doFilter(request, response);
+        // no we have to do the binding, so the filters are used, new class in config package (Security Configuration)
     }
 }
