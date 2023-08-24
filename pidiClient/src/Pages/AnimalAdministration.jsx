@@ -3,8 +3,7 @@ import AnimalsApi from '../Api/AnimalsApi'
 import {useMutation, useQuery} from '@tanstack/react-query'
 import {CircularProgress, Box, Button} from '@mui/material'
 import '../index.css'
-import AnimalDataGridCom from '../Components/AnimalTableCom/AnimalsDataGridCom'
-import AdoptionStatusApi from '../Api/AdoptionStatusApi'
+import AnimalDataGridCom from '../Components/AnimalDataGridCom/AnimalsDataGridCom'
 import NavbarCom from '../Components/NavbarCom/NavbarCom'
 import AddIcon from '@mui/icons-material/Add'
 import {Link} from 'react-router-dom'
@@ -14,11 +13,6 @@ const AnimalAdministration = () => {
   const getAllAnimalsQuery = useQuery({
     queryKey: ['animals'],
     queryFn: () => AnimalsApi.getAllAnimals(),
-  })
-
-  const getAdoptionStatusQuery = useQuery({
-    queryKey: ['adoptionStatus'],
-    queryFn: () => AdoptionStatusApi.get(),
   })
 
   const deleteMutation = useMutation({
@@ -36,9 +30,13 @@ const AnimalAdministration = () => {
     <div>
       <NavbarCom customButtons={customButtons}/>
       <Box sx={{margin: 8}}>
-        {getAllAnimalsQuery.isLoading || getAdoptionStatusQuery.isLoading ? <CircularProgress/> :
-          <AnimalDataGridCom animals={getAllAnimalsQuery.data} adoptionStatus={getAdoptionStatusQuery.data}
-                             onDelete={deleteMutation.mutate}/>}
+        {getAllAnimalsQuery.isLoading ?
+          <CircularProgress/> :
+          <AnimalDataGridCom
+            animals={getAllAnimalsQuery.data}
+            onDelete={deleteMutation.mutate}
+          />
+        }
       </Box>
     </div>
   )
