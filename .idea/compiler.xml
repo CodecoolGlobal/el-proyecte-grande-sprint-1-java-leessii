@@ -7,24 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
-        <module name="pidi-server" />
-=======
         <module name="pidiServer" />
->>>>>>> addAnimalFormBranch
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="pidi" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-<<<<<<< HEAD
-      <module name="pidi-server" options="-parameters" />
-=======
       <module name="pidiServer" options="-parameters" />
->>>>>>> addAnimalFormBranch
     </option>
   </component>
 </project>
