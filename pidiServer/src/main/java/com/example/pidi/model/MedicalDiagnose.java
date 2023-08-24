@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 public class MedicalDiagnose {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     private long id;
     private Date dateOfTreatment;
     private double weight;

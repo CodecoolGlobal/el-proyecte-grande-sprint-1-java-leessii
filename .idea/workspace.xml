@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a437bf5a-e0c0-44e3-a727-e9c83e5b152c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/768a594d-37ea-4d0b-995b-acef2a8b39ff.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/768a594d-37ea-4d0b-995b-acef2a8b39ff/storage_v2/_src_/database/animals.9zHszA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/768a594d-37ea-4d0b-995b-acef2a8b39ff/storage_v2/_src_/database/animals.9zHszA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/768a594d-37ea-4d0b-995b-acef2a8b39ff/storage_v2/_src_/database/animals.9zHszA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/768a594d-37ea-4d0b-995b-acef2a8b39ff/storage_v2/_src_/database/animals.9zHszA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/config/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/AdoptionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/AdoptionStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/MedicalDiagnose.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/MedicalDiagnose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/pidi/src/main/java/com/example/pidi/repository/UserRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="17" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="17" />
+  </component>
+  <component name="ProjectId" id="2UM4jDHSjt8gH6KK8GqXxLriqIs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;aleksFromMentor2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;267cefb9087d99705676b25b8f30195e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.pidi.config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pidi" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PidiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="pidi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.pidi.PidiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a437bf5a-e0c0-44e3-a727-e9c83e5b152c" name="Changes" comment="" />
+      <created>1692736249832</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692736249832</updated>
+      <workItem from="1692736251859" duration="355000" />
+      <workItem from="1692736649675" duration="16386000" />
+      <workItem from="1692862989684" duration="2093000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 public class Animal {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     private long id;
     private String name;
     private int age;
