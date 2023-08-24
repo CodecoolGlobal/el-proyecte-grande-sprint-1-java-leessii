@@ -1,5 +1,6 @@
-package com.example.pidi.model;
+package com.example.pidi.security.user;
 
+import com.example.pidi.security.user.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

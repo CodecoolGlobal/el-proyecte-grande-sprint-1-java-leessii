@@ -1,4 +1,4 @@
-package com.example.pidi.config;
+package com.example.pidi.security.config;
 
 
 

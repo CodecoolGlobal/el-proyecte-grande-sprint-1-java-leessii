@@ -1,6 +1,6 @@
-package com.example.pidi.repository;
+package com.example.pidi.security.user;
 
-import com.example.pidi.model.User;
+import com.example.pidi.security.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
