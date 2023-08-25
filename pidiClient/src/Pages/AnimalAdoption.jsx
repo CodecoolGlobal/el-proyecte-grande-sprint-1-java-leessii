@@ -14,6 +14,8 @@ function AnimalAdoption() {
     queryFn: () => AnimalsApi.getAnimalsForAdoption(),
   })
 
+  console.log(getAnimalsForAdoptionQuery.data)
+
   const customButtons = [
     <Button key="donation" color="inherit" component={Link} to="/donate">
       DONATE

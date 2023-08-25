@@ -15,6 +15,8 @@ const AnimalAdministration = () => {
     queryFn: () => AnimalsApi.getAllAnimals(),
   })
 
+  console.log(getAllAnimalsQuery.data)
+
   const deleteMutation = useMutation({
     mutationFn: (id) => AnimalsApi.delete(id),
     onSuccess: getAllAnimalsQuery.refetch,

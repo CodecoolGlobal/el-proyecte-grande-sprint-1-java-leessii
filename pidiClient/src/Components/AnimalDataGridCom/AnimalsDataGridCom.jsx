@@ -2,8 +2,6 @@ import * as React from 'react'
 import {Box} from '@mui/material'
 import {DataGrid} from '@mui/x-data-grid'
 import DeleteIcon from '@mui/icons-material/Delete'
-import MoreVertIcon from '@mui/icons-material/MoreVert'
-import {borderColor} from '@mui/system'
 import MoreButtonCom from '../MoreButtonCom/MoreButtonCom'
 
 
