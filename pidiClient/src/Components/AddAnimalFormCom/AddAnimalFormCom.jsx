@@ -28,9 +28,11 @@ function AddAnimalFormCom() {
   console.log(watch())
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-      <form onSubmit={handleSubmit(saveAnimalMutation.mutateAsync)} style={{width: '50%'}}>
-        <FormGroup sx={{padding: 2, borderRadius: 2, border: '1px solid', borderColor: 'primary.main'}}>
+    <div>
+      <form
+        onSubmit={handleSubmit(saveAnimalMutation.mutateAsync)}>
+        <FormGroup
+          sx={{padding: 2, borderRadius: 2, border: '1px solid', borderColor: 'primary.main', width: '100%'}}>
           <Controller
             control={control}
             name={'name'}
@@ -94,3 +96,5 @@ function AddAnimalFormCom() {
 }
 
 export default AddAnimalFormCom
+
+//<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>

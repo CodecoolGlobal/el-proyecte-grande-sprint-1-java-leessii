@@ -30,8 +30,10 @@ const AnimalAdministration = () => {
 
   return (
     <div>
-      <NavbarCom customButtons={customButtons}/>
-      <Box sx={{margin: 8}}>
+      <NavbarCom
+        customButtons={customButtons}/>
+      <Box
+        sx={{margin: 6}}>
         {getAllAnimalsQuery.isLoading ?
           <CircularProgress/> :
           <AnimalDataGridCom

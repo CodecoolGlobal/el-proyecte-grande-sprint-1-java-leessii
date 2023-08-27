@@ -1,15 +1,16 @@
 package com.example.pidi.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 @Entity
 @Data
 public class MedicalDiagnose {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     private long id;
     private Date dateOfTreatment;
     private double weight;

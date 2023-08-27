@@ -14,31 +14,33 @@ import {
 import FavoriteIcon from '@mui/icons-material/Favorite'
 
 export default function AnimalCardCom({animal}) {
+  console.log(animal)
+
   return (
     <Card sx={{maxWidth: 345}}>
-      <CardMedia
-        sx={{height: 140}}
-        image="https://media.wired.com/photos/636eb5510ae5a121565fd729/master/w_2560%2Cc_limit/WI110122_FF_ForeverDogs_2400x1350_crop.jpg"
-        title="green iguana"
-      />
+      {animal.animalImage? (
+        <CardMedia
+          component="img"
+          sx={{ height: 140 }}
+          img={animal.animalImage.filePath}
+          alt={animal.name}
+        />
+      ) : null}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {animal.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          <List aria-label="species">
-            <ListItem>
-              Species: {animal.species}
-            </ListItem>
-            <Divider/>
-          </List>
-          <List aria-label="age">
-            <ListItem>
-              Age: {animal.age}
-            </ListItem>
-            <Divider/>
-          </List>
-        </Typography>
+        <List aria-label="species">
+          <ListItem>
+            Species: {animal.species}
+          </ListItem>
+        </List>
+        <Divider/>
+        <List aria-label="age">
+          <ListItem>
+            Age: {animal.age}
+          </ListItem>
+        </List>
       </CardContent>
       <CardActions>
         <Tooltip title="Adoppt">

@@ -1,26 +1,52 @@
 package com.example.pidi.model;
 
+import com.example.pidi.controller.validator.AnimalAgeConstraint;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Data
 public class Animal {
+
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE)
     private long id;
+
+    @Valid
+    // TODO: test validation
+
+    @NotNull(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory")
     private String name;
+
+    @AnimalAgeConstraint
     private int age;
+
+    @NotNull(message = "Species is mandatory")
+    @NotBlank(message = "Species is mandatory")
     private  String species;
+
     private boolean openForAdoption;
+
     @ManyToOne
+    @NotNull(message = "Adoption status is mandatory")
+    //TODO: validate that the object contains id and status
     private AdoptionStatus adoptionStatus;
-    private String admissionDate;
-    private String img;
+
+    @NotNull(message = "Admission date is mandatory")
+    // TODO: format is not working
+    //@JsonFormat(pattern="yyyy-MM-dd")
+    private LocalDate admissionDate;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private AnimalImage animalImage;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<MedicalDiagnose> medicalDiagnose;
 }
