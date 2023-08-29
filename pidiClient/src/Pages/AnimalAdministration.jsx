@@ -7,16 +7,25 @@ import AnimalDataGridCom from '../Components/AnimalTableCom/AnimalsDataGridCom'
 import AdoptionStatusApi from '../Api/AdoptionStatusApi'
 import NavbarCom from '../Components/NavbarCom/NavbarCom'
 import AddIcon from '@mui/icons-material/Add'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+
 
 
 const AnimalAdministration = () => {
+  const navigate = useNavigate();
 
   const token = localStorage.getItem('jwtToken');
 
   const getAllAnimalsQuery = useQuery({
     queryKey: ['animals'],
     queryFn: () => AnimalsApi.getAllAnimals(),
+    /*
+    onError: (error) => {
+      if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+        logout(); // Handle unauthorized access
+      }
+    },
+    */
   })
 
 
@@ -37,6 +46,9 @@ const AnimalAdministration = () => {
     // or resetting component state after logout
   };
 
+  if (!token) {
+    navigate('/')
+  }
 
 
 
