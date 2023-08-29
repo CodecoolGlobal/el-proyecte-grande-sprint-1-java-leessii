@@ -10,6 +10,7 @@ import AnimalAdminRoute from './AnimalAdministrationRoutes'
 import AnimalAdoption from './AnimalAdoptionRoutes'
 import AddAnimalRoute from './AddAnimalRoutes'
 import LoginRoute from "./SignInRoutes"
+import RegistrationRoute from "./RegistrationRoutes";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       AnimalAdminRoute,
       AnimalAdoption,
       AddAnimalRoute,
+        RegistrationRoute,
       LoginRoute,
     ],
   },

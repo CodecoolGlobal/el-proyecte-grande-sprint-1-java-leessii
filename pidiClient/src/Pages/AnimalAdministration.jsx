@@ -9,12 +9,17 @@ import NavbarCom from '../Components/NavbarCom/NavbarCom'
 import AddIcon from '@mui/icons-material/Add'
 import {Link} from 'react-router-dom'
 
+
 const AnimalAdministration = () => {
+
+  const token = localStorage.getItem('jwtToken');
 
   const getAllAnimalsQuery = useQuery({
     queryKey: ['animals'],
     queryFn: () => AnimalsApi.getAllAnimals(),
   })
+
+
 
   const getAdoptionStatusQuery = useQuery({
     queryKey: ['adoptionStatus'],
@@ -26,9 +31,21 @@ const AnimalAdministration = () => {
     onSuccess: getAllAnimalsQuery.refetch,
   })
 
+  const logout = () => {
+    localStorage.removeItem('jwtToken');
+    // You might want to perform additional actions like redirecting to the login page
+    // or resetting component state after logout
+  };
+
+
+
+
   const customButtons = [
     <Button key="addAnimal" color="inherit" startIcon={<AddIcon/>} component={Link} to="/add">
       ADD ANIMAL
+    </Button>,
+    <Button key="logout" color="inherit" startIcon={<AddIcon/>} component={Link} to="/" onClick={() => logout()}>
+      logout
     </Button>,
   ]
 
@@ -45,3 +62,4 @@ const AnimalAdministration = () => {
 }
 
 export default AnimalAdministration
+
