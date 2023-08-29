@@ -1,6 +1,8 @@
 package com.example.pidi.model;
 
 import com.example.pidi.controller.validator.AnimalAgeConstraint;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @Entity
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Animal {
 
     @Id
@@ -26,6 +29,7 @@ public class Animal {
     private String name;
 
     @AnimalAgeConstraint
+    // TODO: make the constraint work
     private int age;
 
     @NotNull(message = "Species is mandatory")
@@ -40,8 +44,7 @@ public class Animal {
     private AdoptionStatus adoptionStatus;
 
     @NotNull(message = "Admission date is mandatory")
-    // TODO: format is not working
-    //@JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate admissionDate;
 
     @OneToOne(cascade = CascadeType.ALL)

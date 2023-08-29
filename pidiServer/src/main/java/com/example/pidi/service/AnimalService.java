@@ -14,7 +14,7 @@ public interface AnimalService {
 
     List<Animal> getAnimalsForAdoption();
 
-    Animal save(Animal animal);
+    Animal save(Animal animal, MultipartFile imageFile) throws IOException;
 
     Optional<Animal> findById(long id) throws ResourceNotFoundException;
 
@@ -24,7 +24,11 @@ public interface AnimalService {
 
     Animal addMedicalDiagnose(long animalId, MedicalDiagnose medicalDiagnose);
 
+    /* NOT NEEDED
     Animal addAnimalImage(long animalId, MultipartFile imageFile) throws IOException;
+     */
 
     void deleteAnimalImage(long imageId);
+
+    Animal getJson(String animal, MultipartFile imageFile);
 }

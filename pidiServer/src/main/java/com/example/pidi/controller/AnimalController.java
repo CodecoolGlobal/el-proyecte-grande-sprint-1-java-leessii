@@ -7,6 +7,7 @@ import com.example.pidi.service.AnimalService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -38,9 +39,15 @@ public class AnimalController {
         return animalService.getAnimalsForAdoption();
     }
 
-    @PostMapping
-    public Animal createAnimal(@Valid @RequestBody Animal animal) {
-        return animalService.save(animal);
+    @PostMapping(consumes = {
+            MediaType.APPLICATION_JSON_VALUE,
+            MediaType.MULTIPART_FORM_DATA_VALUE
+    })
+    public Animal createAnimal(@Valid @RequestPart String animal,
+                                @RequestPart("animalImage") MultipartFile imageFile) throws IOException {
+        Animal animalJson = animalService.getJson(animal, imageFile);
+        animalService.save(animalJson, imageFile);
+        return animalJson;
     }
 
     @GetMapping("/{id}")
@@ -49,11 +56,13 @@ public class AnimalController {
                 .orElseThrow(ResourceNotFoundException::new);
     }
 
+    /* NOT NEEDED
     @PutMapping("/{animalId}/image")
     public Animal addAnimalImage(@PathVariable long animalId,
                                @RequestPart("animalImage") MultipartFile imageFile) throws IOException {
         return animalService.addAnimalImage(animalId, imageFile);
     }
+     */
 
     @PostMapping("/{animalId}/diagnoses")
     public Animal addMedicalDiagnose(@PathVariable long animalId,
