@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @RequestMapping("/animals")
 public class AnimalController {
-    private final AnimalService animalService;
+    private final AnimalService animalService; //bc service-class defined as bean
 
     public AnimalController(AnimalService animalService) {
         this.animalService = animalService;
@@ -20,6 +20,8 @@ public class AnimalController {
 
     @GetMapping
     public List<Animal> getAllAnimals() {
+
+        System.out.println("+++++++++++++++++++++++++++++++ ANIMALS++++++++++++++++++++ANIMALS +++++++");
         return animalService.findAll();
     }
     @GetMapping("/adoption")

@@ -3,9 +3,11 @@ package com.example.pidi.service;
 import com.example.pidi.controller.exeption.ResourceNotFoundException;
 import com.example.pidi.model.Animal;
 import com.example.pidi.model.MedicalDiagnose;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+@Service
 
 public interface AnimalService {
     List<Animal> findAll();
