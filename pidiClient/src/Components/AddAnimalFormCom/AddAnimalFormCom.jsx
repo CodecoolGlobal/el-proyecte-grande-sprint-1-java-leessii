@@ -13,7 +13,7 @@ function AddAnimalFormCom({control}) {
       sx={{padding: 2, borderRadius: 2, border: '1px solid', borderColor: 'primary.main', width: '100%'}}>
       <Controller
         control={control}
-        name={'name'}
+        name={'animal.name'}
         render={({field}) => <TextField
           sx={{paddingBottom: 2}}
           required={true}
@@ -24,7 +24,7 @@ function AddAnimalFormCom({control}) {
 
       <Controller
         control={control}
-        name={'age'}
+        name={'animal.age'}
         render={({field}) => <TextField
           sx={{paddingBottom: 2}}
           required={true}
@@ -36,7 +36,7 @@ function AddAnimalFormCom({control}) {
 
       <Controller
         control={control}
-        name={'species'}
+        name={'animal.species'}
         render={({field}) => <TextField
           sx={{paddingBottom: 2}}
           required={true}
@@ -46,7 +46,7 @@ function AddAnimalFormCom({control}) {
       />
 
       <Controller
-        name={'adoptionStatus'}
+        name={'animal.adoptionStatus'}
         control={control}
         render={({field}) => <AdoptionStatusSelectCom
           sx={{paddingBottom: 2}}
@@ -56,7 +56,7 @@ function AddAnimalFormCom({control}) {
       />
 
       <Controller
-        name={'admissionDate'}
+        name={'animal.admissionDate'}
         control={control}
         render={({field}) => <DatePicker
           sx={{paddingBottom: 2}}
