@@ -24,10 +24,6 @@ public interface AnimalService {
 
     Animal addMedicalDiagnose(long animalId, MedicalDiagnose medicalDiagnose);
 
-    /* NOT NEEDED
-    Animal addAnimalImage(long animalId, MultipartFile imageFile) throws IOException;
-     */
-
     void deleteAnimalImage(long imageId);
 
     Animal getJson(String animal, MultipartFile imageFile);

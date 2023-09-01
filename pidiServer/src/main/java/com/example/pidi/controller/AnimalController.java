@@ -43,11 +43,13 @@ public class AnimalController {
             MediaType.APPLICATION_JSON_VALUE,
             MediaType.MULTIPART_FORM_DATA_VALUE
     })
-    public Animal createAnimal(@Valid @RequestPart String animal,
-                                @RequestPart("animalImage") MultipartFile imageFile) throws IOException {
-        Animal animalJson = animalService.getJson(animal, imageFile);
-        animalService.save(animalJson, imageFile);
-        return animalJson;
+    */
+    @PostMapping
+    public Animal createAnimal(@Valid @RequestPart Animal animal,
+                                @RequestPart(value = "animalImage", required = false) MultipartFile imageFile) throws IOException {
+        System.out.println("WE REACHED THE BACKEND!!!!!!!!!!!!!!!!!!!!!----------------------------------------------");
+        animalService.save(animal, imageFile);
+        return animal;
     }
 
     @GetMapping("/{id}")
@@ -55,14 +57,6 @@ public class AnimalController {
         return animalService.findById(id)
                 .orElseThrow(ResourceNotFoundException::new);
     }
-
-    /* NOT NEEDED
-    @PutMapping("/{animalId}/image")
-    public Animal addAnimalImage(@PathVariable long animalId,
-                               @RequestPart("animalImage") MultipartFile imageFile) throws IOException {
-        return animalService.addAnimalImage(animalId, imageFile);
-    }
-     */
 
     @PostMapping("/{animalId}/diagnoses")
     public Animal addMedicalDiagnose(@PathVariable long animalId,
@@ -78,19 +72,5 @@ public class AnimalController {
     @DeleteMapping
     public void clearDataBase() {
         animalService.clearTable();
-    }
-
-    //TODO: does it belong here? extract?
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public Map<String, String> handleValidationExceptions(
-            MethodArgumentNotValidException ex) {
-        Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getAllErrors().forEach((error) -> {
-            String fieldName = ((FieldError) error).getField();
-            String errorMessage = error.getDefaultMessage();
-            errors.put(fieldName, errorMessage);
-        });
-        return errors;
     }
 }

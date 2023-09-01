@@ -44,7 +44,9 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public Animal save(Animal animal, MultipartFile imageFile) throws IOException {
         animal.setOpenForAdoption(AdoptionStatusType.AVAILABLE.getString().equals(animal.getAdoptionStatus().getStatus()));
-        saveAnimalImage(animal, imageFile);
+        if (imageFile != null) {
+            saveAnimalImage(animal, imageFile);
+        }
         return animalRepository.save(animal);
     }
 
@@ -69,40 +71,6 @@ public class AnimalServiceImpl implements AnimalService {
         return null;
     }
 
-    /* NOT NEEDDED
-    @Override
-    public Animal addAnimalImage(long animalId, MultipartFile imageFile) throws IOException {
-        String filePath = Constants.imageStorageFolderPath + "/" + imageFile.getOriginalFilename();
-        Optional<Animal> animalOptional = animalRepository.findById(animalId);
-
-        if (animalOptional.isPresent()) {
-            Animal animal = animalOptional.get();
-
-            if (animalOptional.get().getAnimalImage() != null) {
-                long animalImageId = animal.getAnimalImage().getId();
-
-                animal.setAnimalImage(null);
-                animalRepository.save(animal);
-
-                deleteAnimalImage(animalImageId);
-            }
-
-            AnimalImage animalImage = animalImageRepository.save(AnimalImage.builder()
-                    .name(imageFile.getOriginalFilename())
-                    .type(imageFile.getContentType())
-                    .imageSize(imageFile.getSize())
-                    .filePath(filePath)
-                    .build());
-
-            imageFile.transferTo(new File(filePath));
-
-            animal.setAnimalImage(animalImage);
-            return animalRepository.save(animal);
-        }
-
-        return animalOptional.get();
-    }
-     */
 
     @Override
     public void deleteAnimalImage(long imageId) {
