@@ -16,6 +16,7 @@ function UploadImageCom({onImageUpload}) {
         })
       )
     );
+    console.log(acceptedFiles)
     onImageUpload(acceptedFiles);
   }, [onImageUpload]);
 
