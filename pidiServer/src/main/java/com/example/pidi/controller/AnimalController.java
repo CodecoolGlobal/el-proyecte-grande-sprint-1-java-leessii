@@ -39,12 +39,11 @@ public class AnimalController {
         return animalService.getAnimalsForAdoption();
     }
 
-    /*(consumes = {
+    @PostMapping(consumes = {
             MediaType.MULTIPART_FORM_DATA_VALUE,
             MediaType.APPLICATION_JSON_VALUE,
     })
-    */
-    @PostMapping
+
     public Animal createAnimal(@Valid @RequestPart Animal animal,
                                 @RequestPart(value = "animalImage", required = false) MultipartFile imageFile) throws IOException {
         System.out.println("WE REACHED THE BACKEND!!!!!!!!!!!!!!!!!!!!!----------------------------------------------");

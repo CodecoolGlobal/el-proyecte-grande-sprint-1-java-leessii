@@ -44,7 +44,7 @@ public class Animal {
     private AdoptionStatus adoptionStatus;
 
     @NotNull(message = "Admission date is mandatory")
-    @JsonFormat(pattern="yyyy-MM-dd")
+    //@JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate admissionDate;
 
     @OneToOne(cascade = CascadeType.ALL)
