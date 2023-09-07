@@ -1,3 +1,5 @@
+
+
 INSERT INTO adoption_status (status)
 SELECT 'Available'
 WHERE NOT EXISTS (SELECT 1 FROM adoption_status WHERE status = 'Available');
