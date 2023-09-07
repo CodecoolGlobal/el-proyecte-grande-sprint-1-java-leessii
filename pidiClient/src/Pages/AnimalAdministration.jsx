@@ -1,5 +1,7 @@
 import React from 'react'
 import AnimalsApi from '../Api/AnimalsApi'
+import AdoptionStatusApi from '../Api/AdoptionStatusApi'
+
 import {useMutation, useQuery} from '@tanstack/react-query'
 import {CircularProgress, Box, Button} from '@mui/material'
 import '../index.css'

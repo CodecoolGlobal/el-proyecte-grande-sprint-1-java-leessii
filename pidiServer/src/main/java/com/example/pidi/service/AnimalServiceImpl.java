@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Optional;
 
@@ -92,8 +93,17 @@ public class AnimalServiceImpl implements AnimalService {
         return animalJson;
     }
 
+    /*
     private Animal saveAnimalImage(Animal animal, MultipartFile imageFile) throws IOException {
-        String filePath = Constants.imageStorageFolderPath + "/" + imageFile.getOriginalFilename();
+        // Get the current working directory (your project's root directory)
+        String projectPath = System.getProperty("user.dir");
+
+        // Define the relative path to the image storage folder within your project
+        String relativeImagePath = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "imagStorage" + File.separator + imageFile.getOriginalFilename();
+
+        // Construct the absolute file path by combining the project path and relative image path
+        String filePath = projectPath + File.separator + relativeImagePath;
+        System.out.println(filePath);
 
         if (animal.getAnimalImage() != null) {
             long animalImageId = animal.getAnimalImage().getId();
@@ -108,10 +118,57 @@ public class AnimalServiceImpl implements AnimalService {
                 .name(imageFile.getOriginalFilename())
                 .type(imageFile.getContentType())
                 .imageSize(imageFile.getSize())
-                .filePath(filePath)
+                .filePath(relativeImagePath)  // Store the relative path in the database
                 .build());
 
-        imageFile.transferTo(new File(filePath));
+        // Construct the File object for saving the image
+        File imageStorageFile = new File(filePath);
+
+        // Ensure that the parent directories exist, creating them if necessary
+        imageStorageFile.getParentFile().mkdirs();
+
+        // Transfer the uploaded image to the specified file path
+        imageFile.transferTo(imageStorageFile);
+
+        return animal;
+    }
+*/
+
+    private Animal saveAnimalImage(Animal animal, MultipartFile imageFile) throws IOException {
+        // Get the current working directory (your project's root directory)
+        String projectPath = System.getProperty("user.dir");
+
+        // Define the relative path to the image storage folder within your project
+        String relativeImagePath = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "imagStorage" + File.separator + imageFile.getOriginalFilename();
+
+        // Construct the absolute file path by combining the project path and relative image path
+        String filePath = projectPath + File.separator + relativeImagePath;
+
+        if (animal.getAnimalImage() != null) {
+            long animalImageId = animal.getAnimalImage().getId();
+
+            animal.setAnimalImage(null);
+            animalRepository.save(animal);
+
+            deleteAnimalImage(animalImageId);
+        }
+
+        animal.setAnimalImage(AnimalImage.builder()
+                .name(imageFile.getOriginalFilename())
+                .type(imageFile.getContentType())
+                .imageSize(imageFile.getSize())
+                .filePath(relativeImagePath)  // Store the relative path in the database
+                .build());
+
+        // Construct the File object for saving the image
+        File imageStorageFile = new File(filePath);
+
+        // Ensure that the parent directories exist, creating them if necessary
+        imageStorageFile.getParentFile().mkdirs();
+
+        // Transfer the uploaded image to the specified file path
+        imageFile.transferTo(imageStorageFile);
+
         return animal;
     }
 
