@@ -18,7 +18,7 @@ import java.util.List;
 public class Animal {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     private long id;
 
     @Valid

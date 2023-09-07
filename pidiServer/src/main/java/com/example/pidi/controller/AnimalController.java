@@ -18,11 +18,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @RequestMapping("/animals")
 public class AnimalController {
-    private final AnimalService animalService;
+    private final AnimalService animalService; //bc service-class defined as bean
 
     public AnimalController(AnimalService animalService) {
         this.animalService = animalService;
@@ -30,6 +30,8 @@ public class AnimalController {
 
     @GetMapping
     public List<Animal> getAllAnimals() {
+
+        System.out.println("+++++++++++++++++++++++++++++++ ANIMALS++++++++++++++++++++ANIMALS +++++++");
         return animalService.findAll();
     }
 

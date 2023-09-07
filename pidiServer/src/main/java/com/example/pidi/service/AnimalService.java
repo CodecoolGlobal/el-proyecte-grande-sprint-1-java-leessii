@@ -4,10 +4,13 @@ import com.example.pidi.controller.exeption.ResourceNotFoundException;
 import com.example.pidi.model.Animal;
 import com.example.pidi.model.MedicalDiagnose;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.stereotype.Service;
+
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+@Service
 
 public interface AnimalService {
     List<Animal> findAll();
