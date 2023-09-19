@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,11 +25,16 @@ public class AnimalServiceImpl implements AnimalService {
     private final AnimalRepository animalRepository;
     private final MedicalDiagnoseRepository medicalDiagnoseRepository;
     private final AnimalImageRepository animalImageRepository;
+    private final String imageFolderPath;
 
-    public AnimalServiceImpl(AnimalRepository animalRepository, MedicalDiagnoseRepository medicalDiagnoseRepository, AnimalImageRepository animalImageRepository) {
+    public AnimalServiceImpl(AnimalRepository animalRepository,
+                             MedicalDiagnoseRepository medicalDiagnoseRepository,
+                             AnimalImageRepository animalImageRepository,
+                            @Value("${storage.images.folder}") String imageFolderPath) {
         this.animalRepository = animalRepository;
         this.medicalDiagnoseRepository = medicalDiagnoseRepository;
         this.animalImageRepository = animalImageRepository;
+        this.imageFolderPath = imageFolderPath;
     }
 
     @Override
