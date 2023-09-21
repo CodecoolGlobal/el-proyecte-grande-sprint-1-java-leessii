@@ -8,6 +8,7 @@ import AboutUs from "../Pages/AboutUs";
 import AnimalAdministration from "../Pages/AnimalAdministration";
 import AddAnimal from "../Pages/AddAnimal";
 import LogIn from "../Pages/LogIn";
+import Registration from "../Pages/Registration";
 import AnimalAdoption from "../Pages/AnimalAdoption";
 import EditAnimal from "../Pages/EditAnimal";
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LogIn />,
+      },
+      {
+        path: "/register",
+        element: <Registration />,
       },
       {
         path: "/admin",
