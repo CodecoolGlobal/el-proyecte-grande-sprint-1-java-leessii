@@ -1,10 +1,12 @@
-import axios from 'axios';
-const token = localStorage.getItem('jwtToken');
+import axios from "axios";
+import config from "./JwtTokenConfig";
 
 const adoptionStatusApi = {
-  get: () => axios.get('http://localhost:8080/adoptionstatus', {
-    headers: { Authorization: `Bearer ${token}` },
-  }).then(({ data }) => data),
+  get: () =>
+    axios
+      .get("http://localhost:8080/api/v1/adoption/status", config)
+      .then(({ data }) => data),
+
 };
 
 export default adoptionStatusApi;

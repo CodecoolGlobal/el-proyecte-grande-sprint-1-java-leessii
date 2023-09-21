@@ -20,7 +20,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/animals")
+@RequestMapping("/api/v1")
 public class AnimalController {
     private final AnimalService animalService; //bc service-class defined as bean
 
@@ -28,49 +28,48 @@ public class AnimalController {
         this.animalService = animalService;
     }
 
-    @GetMapping
+    @GetMapping("/animals")
     public List<Animal> getAllAnimals() {
 
         System.out.println("+++++++++++++++++++++++++++++++ ANIMALS++++++++++++++++++++ANIMALS +++++++");
         return animalService.findAll();
     }
 
-    @GetMapping("/adoption")
+    @GetMapping("/auth/animals/adoption")
     @Transactional
     public List<Animal> getAnimalsForAdoption() {
         return animalService.getAnimalsForAdoption();
     }
 
-    @PostMapping(consumes = {
+    @PostMapping(value ="/animals", consumes = {
             MediaType.MULTIPART_FORM_DATA_VALUE,
             MediaType.APPLICATION_JSON_VALUE,
     })
 
     public Animal createAnimal(@Valid @RequestPart Animal animal,
                                 @RequestPart(value = "animalImage", required = false) MultipartFile imageFile) throws IOException {
-        System.out.println("WE REACHED THE BACKEND!!!!!!!!!!!!!!!!!!!!!----------------------------------------------");
         animalService.save(animal, imageFile);
         return animal;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/animals/{id}")
     public Animal getAnimalById(@PathVariable Long id) throws ResourceNotFoundException {
         return animalService.findById(id)
                 .orElseThrow(ResourceNotFoundException::new);
     }
 
-    @PostMapping("/{animalId}/diagnoses")
+    @PostMapping("/animals/{animalId}/diagnoses")
     public Animal addMedicalDiagnose(@PathVariable long animalId,
                                      @RequestBody MedicalDiagnose medicalDiagnose) {
         return animalService.addMedicalDiagnose(animalId, medicalDiagnose);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/animals/{id}")
     public void deleteAnimal(@PathVariable Long id) {
         animalService.delete(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/animals")
     public void clearDataBase() {
         animalService.clearTable();
     }

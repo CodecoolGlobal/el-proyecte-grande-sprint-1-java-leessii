@@ -17,6 +17,7 @@ public interface AnimalService {
 
     List<Animal> getAnimalsForAdoption();
 
+    // todo mentor review 2023-0918 use inputstream or byte array instead of multipart file
     Animal save(Animal animal, MultipartFile imageFile) throws IOException;
 
     Optional<Animal> findById(long id) throws ResourceNotFoundException;
