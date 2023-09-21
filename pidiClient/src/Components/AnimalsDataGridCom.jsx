@@ -2,7 +2,7 @@ import * as React from "react";
 import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
-import MoreButtonCom from "./AnimalActionButtonCom";
+import AnimalActionButtonCom from "./AnimalActionButtonCom";
 
 export default function AnimalsDataGridCom({ animals, onDelete }) {
   const columns = [
@@ -71,7 +71,8 @@ export default function AnimalsDataGridCom({ animals, onDelete }) {
             onClick={() => onDelete(params.row.id)}
             style={{ cursor: "pointer", marginRight: "8px" }}
           />
-          <MoreButtonCom />
+          {console.log(params.row.id)}
+          <AnimalActionButtonCom animalId={params.row.id} />
         </div>
       ),
     },

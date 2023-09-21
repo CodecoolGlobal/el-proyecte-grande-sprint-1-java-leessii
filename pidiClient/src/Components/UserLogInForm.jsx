@@ -27,10 +27,17 @@ const UserLogInForm = () => {
   const onSubmit = async (data) => {
     try {
       const res = await authUserMutation.mutateAsync(data);
-      localStorage.setItem("jwtData", res.data);
-      console.log(res.data);
       localStorage.setItem("jwtToken", res.data.token);
-      navigate("/admin");
+      console.log(localStorage.getItem("jwtToken"));
+
+      if (
+        window.location.pathname === "/admin" ||
+        window.location.pathname === "/add"
+      ) {
+        window.location.reload();
+      } else {
+        navigate("/admin");
+      }
     } catch (error) {
       if (error.response && error.response.status === 403) {
         setError("Password and Email don't match");

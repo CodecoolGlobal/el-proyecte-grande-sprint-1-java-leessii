@@ -73,7 +73,6 @@ function AddAnimalFormCom({ control }) {
         render={({ field }) => (
           <DatePicker
             sx={{ paddingBottom: 2 }}
-            disablePast={true}
             inputFormat="E MMM dd yyyy HH:MM:SS O"
             {...field}
           />

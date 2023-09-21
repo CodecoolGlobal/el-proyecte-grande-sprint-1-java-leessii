@@ -10,6 +10,8 @@ const animalsApi = {
     axios
       .get("http://localhost:8080/api/v1/auth/animals/adoption", config)
       .then(({ data }) => data),
+  getAnimalById: (id) =>
+    axios.get(`http://localhost:8080/api/v1/animals/${id}`, config),
   saveAnimal: (newData) =>
     axios.post("http://localhost:8080/api/v1/animals", newData, config),
   delete: (id) =>

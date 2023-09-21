@@ -13,7 +13,7 @@ import { createTheme, CssBaseline } from "@mui/material";
 const queryClient = new QueryClient();
 const theme = createTheme({
   palette: {
-    type: "light",
+    type: "dark",
     primary: {
       main: "#17242A",
     },

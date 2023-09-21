@@ -9,6 +9,7 @@ import AnimalAdministration from "../Pages/AnimalAdministration";
 import AddAnimal from "../Pages/AddAnimal";
 import LogIn from "../Pages/LogIn";
 import AnimalAdoption from "../Pages/AnimalAdoption";
+import EditAnimal from "../Pages/EditAnimal";
 
 import "../index.css";
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/add",
         element: <CheckLogin LoggedIn={<AddAnimal />} LoggedOut={<LogIn />} />,
+      },
+      {
+        path: "/edit/:id",
+        element: <CheckLogin LoggedIn={<EditAnimal />} LoggedOut={<LogIn />} />,
       },
     ],
   },
