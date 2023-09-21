@@ -6,31 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d2cb868-f037-4a68-960c-d9d658b955d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AnimalAdministration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AnimalAdministration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/src/main/java/com/example/pidi/service/AnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pidiServer/src/main/java/com/example/pidi/service/AnimalServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../pidiServer/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../pidiServer/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/controller/AnimalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/controller/AnimalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/AuthenticationRequest$AuthenticationRequestBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/AuthenticationRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/AuthenticationResponse$AuthenticationResponseBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/AuthenticationResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/RegisterRequest$RegisterRequestBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/auth/RegisterRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/config/ApplicationConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/config/JwtAuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/config/JwtService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/user/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/user/User$UserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/user/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/security/user/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/service/AnimalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../pidiServer/target/classes/com/example/pidi/service/AnimalServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/imagStorage/download.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pidiServer/target/classes/imagStorage/istockphoto-1193591781-612x612.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/main/resources/imagStorage/3083.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/main/resources/imagStorage/IMG_5099.JPG" beforeDir="false" />
     </list>
