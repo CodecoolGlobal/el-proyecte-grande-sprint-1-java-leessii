@@ -4,15 +4,13 @@ import { Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import AddAnimalFormCom from "../Components/AddAnimalFormCom";
 import Grid from "@mui/material/Grid";
-import UploadImageCom from "../Components/UploadImageCom";
 import { useForm } from "react-hook-form";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import AnimalsApi from "../Api/AnimalsApi";
-import { useState } from "react";
 
 const customButtons = [
   <Button key="allAnimlas" color="inherit" component={Link} to="/admin">
-    All animals
+    All Animals
   </Button>,
 ];
 

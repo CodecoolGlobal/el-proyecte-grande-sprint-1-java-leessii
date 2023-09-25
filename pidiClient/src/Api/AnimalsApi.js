@@ -8,7 +8,7 @@ const animalsApi = {
       .then(({ data }) => data),
   getAnimalsForAdoption: () =>
     axios
-      .get("http://localhost:8080/api/v1/auth/animals/adoption", config)
+      .get("http://localhost:8080/api/v1/auth/animals/adoption")
       .then(({ data }) => data),
   getAnimalById: (id) =>
     axios.get(`http://localhost:8080/api/v1/animals/${id}`, config),

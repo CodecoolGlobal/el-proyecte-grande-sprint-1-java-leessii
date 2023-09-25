@@ -71,7 +71,6 @@ export default function AnimalsDataGridCom({ animals, onDelete }) {
             onClick={() => onDelete(params.row.id)}
             style={{ cursor: "pointer", marginRight: "8px" }}
           />
-          {console.log(params.row.id)}
           <AnimalActionButtonCom animalId={params.row.id} />
         </div>
       ),

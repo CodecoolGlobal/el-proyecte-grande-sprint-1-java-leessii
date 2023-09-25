@@ -7,17 +7,20 @@ import Grid from "@mui/material/Grid";
 import NavbarCom from "../Components/NavbarCom";
 import { Link } from "react-router-dom";
 
+const customButtons = [
+  <Button key="aboutUs" color="inherit" component={Link} to="/">
+    About Us
+  </Button>,
+  <Button key="donation" color="inherit" component={Link} to="/donate">
+    Donate
+  </Button>,
+];
+
 function AnimalAdoption() {
   const getAnimalsForAdoptionQuery = useQuery({
     queryKey: ["animals"],
     queryFn: () => AnimalsApi.getAnimalsForAdoption(),
   });
-
-  const customButtons = [
-    <Button key="donation" color="inherit" component={Link} to="/donate">
-      DONATE
-    </Button>,
-  ];
 
   return (
     <div>

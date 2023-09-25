@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import NavbarCom from "../Components/NavbarCom";
 import { Button, Container } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AddAnimalFormCom from "../Components/AddAnimalFormCom";
 import Grid from "@mui/material/Grid";
 import { useMutation } from "@tanstack/react-query";

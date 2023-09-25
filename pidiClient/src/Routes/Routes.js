@@ -12,6 +12,7 @@ import AnimalAdoption from "../Pages/AnimalAdoption";
 import EditAnimal from "../Pages/EditAnimal";
 
 import "../index.css";
+import Donate from "../Pages/Donate";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/adoption",
         element: <AnimalAdoption />,
+      },
+      {
+        path: "/donate",
+        element: <Donate />,
       },
       {
         path: "/login",
